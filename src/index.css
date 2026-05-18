@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-primary font-sans antialiased overflow-x-hidden;
+  }
+}
+
+/* Magnetic button smooth hover */
+.magnetic-btn {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.magnetic-btn:hover {
+  transform: scale(1.03);
+}
+
+/* Button sliding background */
+.btn-slide {
+  position: relative;
+  overflow: hidden;
+}
+.btn-slide .btn-layer {
+  position: absolute;
+  inset: 0;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+.btn-slide:hover .btn-layer {
+  transform: translateY(0);
+}
+.btn-slide span {
+  position: relative;
+  z-index: 1;
+}
+
+.link-hover {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+.link-hover:hover {
+  transform: translateY(-1px);
+}
